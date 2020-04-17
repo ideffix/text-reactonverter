@@ -9,15 +9,19 @@ export const convertToCamelCase = (str) => {
     )
 }
 
-export const convertToPascalCase = (str) => str
+export const convertToPascalCase = (str) =>
+    split(str)
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join('')
 
-export const convertToSnakeCase = (str) => str
+export const convertToSnakeCase = (str) => split(str).join('_')
 
-export const convertToUpperSneakCase = (str) => str
+export const convertToUpperSnakeCase = (str) =>
+    split(str).join('_').toUpperCase()
 
-export const convertToKebabCase = (str) => str
+export const convertToKebabCase = (str) => split(str).join('-')
 
-export const convertToFreeText = (str) => str
+export const convertToFreeText = (str) => split(str).join(' ')
 
 const split = (str) =>
     str
