@@ -29,3 +29,4 @@ const split = (str) =>
         .replace(/([a-z])([A-Z])|\_|\-/g, '$1 $2')
         .split(' ')
         .map((el) => el.toLowerCase())
+        .filter((el) => !!el)

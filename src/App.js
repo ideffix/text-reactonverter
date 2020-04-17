@@ -50,9 +50,12 @@ const App = () => {
     const [converter, setConverter] = useState(converters[0].value)
     const outputTransformer = (str) =>
         str
-            .split('\n')
-            .map((s) => fooMap[converter](s))
-            .join('\n')
+            ? str
+                  .split('\n')
+                  .map((s) => fooMap[converter](s))
+                  .join('\n')
+            : ''
+
     return (
         <div className="App">
             <header className="App-header">
